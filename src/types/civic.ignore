@@ -1,0 +1,46 @@
+export enum ProposalCategory { Green, Kids, Road }
+export enum ProposalType { Create, Remove, Update }
+export enum ProposalStatus { Proposed, Reviewing, Approved, Rejected, VotePassed, VoteFailed, Actioned, Closed }
+
+
+export class Proposal {
+    title: string;
+    description: string;
+    category: ProposalCategory;
+    budget: number;
+    type: ProposalType;
+    photos: Blob[];
+    location: string;
+}
+
+export class ProposalExtended extends Proposal {
+    proposalId: number;
+    status: ProposalStatus; // also used for new status when updating
+    regulations: string;
+    comment: string;
+}
+
+export class ProposalDetailed extends ProposalExtended {
+    created: Date;
+    approved: Date;
+    updated: Date;
+    voted: string[];
+    yesVoteCount: number;
+}
+
+export class ProposalHistory {
+    timestamp: Date;
+    authorizer: string;
+    authorizerCommonName: string;
+    humanAuthorizer: string;
+    humanAuthorizerCommonName: string;
+    status: ProposalStatus;
+    comment: string;
+    txId?: string;
+}
+
+class MyAccount {
+    accountName: string;
+    commonName: string;
+    privateKey: string;
+}

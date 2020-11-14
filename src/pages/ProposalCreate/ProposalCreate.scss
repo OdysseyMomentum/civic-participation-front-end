@@ -1,0 +1,298 @@
+.header-wrap {
+    width: 100%;
+    height: 30vh;
+
+    .header-img {
+        width: 100%;
+        height: 100%;
+    }
+
+    position: relative;
+
+    .header-title {
+        position: absolute;
+        bottom: 13px;
+        padding-left: 50px;
+        align-items: flex-end;
+    }
+
+    .input-container+p+p {
+        margin: 0;
+        color: red;
+        position: absolute;
+        left: 100px;
+        top: 53px;
+    }
+
+    .MuiFormHelperText-root {
+        position: absolute;
+        left: 100px;
+        bottom: -17px;
+        color: red;
+    }
+}
+
+.main-container-proposal-create {
+    width: 1024px;
+    height: 65vh;
+    margin: 23px auto;
+    position: relative;
+
+    .main-wraper {
+        margin-top:60px;
+    }
+
+    .dropzone-wraper {
+        margin-top:60px;
+    }
+
+    .MuiTypography-colorTextSecondary {
+        position: absolute;
+        right: 0;
+    }
+
+    .MuiTypography-colorTextSecondary {
+        color: #599C6D;
+    }
+
+    .MuiInput-underline:after {
+        border-bottom: 2px solid #599C6D;
+    }
+
+    .MuiInput-underline::before {
+        border-bottom: 2px solid #599C6D;
+    }
+
+    .create-type-wrape {
+        margin-top: 8px;
+        .MuiFormControl-root {
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .MuiFormHelperText-root {
+            text-align: left;
+            position: absolute;
+            bottom: 0;
+        }
+    }
+
+    .catergory-wrape {
+        margin-top: 20px;
+    }
+
+    .MuiFormHelperText-root {
+        color: red;
+    }
+
+    .category-checkbox-wrape {
+        position: relative;
+
+        .MuiTypography-body1 {
+            color: #599C6D;
+        }
+
+        .MuiFormHelperText-root {
+            text-align: left;
+        }
+
+        .MuiFormHelperText-root {
+            text-align: right;
+            position: absolute;
+        }
+
+        .MuiFormControlLabel-root {
+            width: 90px;
+            margin-right: 5px;
+
+            span {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .MuiFormHelperText-root {
+        text-align: right;
+    }
+
+    .MuiFormControl-fullWidth {
+        label.Mui-focused {
+            color: #599C6D;
+        }
+
+        label.MuiFormLabel-root {
+            color: #599C6D;
+        }
+
+        textarea {
+            color: rgba(0, 0, 0, 0.8);
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        .MuiFormHelperText-root {
+            color: #ccc;
+        }
+    }
+
+    .description-helper {
+        margin-top: -35px;
+
+        P {
+            text-align: left;
+        }
+    }
+
+    .MuiDropzoneArea-root {
+        height: 185px;
+        width: 283px;
+        min-height: 185px;
+        border: none;
+        background: rgba(34, 123, 60, 0.75);
+        position: relative;
+        outline: none;
+
+        .MuiDropzonePreviewList-root {
+            position: absolute;
+            top: 0;
+            justify-content: center;
+            margin: 0;
+            height: 185px;
+            width: 283px;
+
+            .MuiDropzonePreviewList-imageContainer {
+                padding: 0;
+                position: absolute;
+                max-width: 100%;
+
+                &:hover {
+                    .MuiDropzonePreviewList-image {
+                        opacity: 1;
+                    }
+                }
+
+                .MuiDropzonePreviewList-image {
+                    height: 185px;
+                    width: 283px;
+                }
+                .MuiDropzonePreviewList-removeButton {
+                    top: 2px;
+                    right: 2px;
+                }
+            }
+        }
+
+        &:hover {
+            border: 1px solid rgba(34, 123, 60, 0.75);
+        }
+
+        .MuiDropzoneArea-textContainer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+
+            p {
+                font-size: 12px;
+                color: rgba(255, 255, 255, 1);
+            }
+
+            .MuiDropzoneArea-icon {
+                width: 24px;
+                height: 16px;
+                color: #FFFFFF;
+            }
+        }
+    }
+
+    .googlmap-wrap {
+        height: 294px;
+        width: 100%;
+        margin-top: 60px;
+
+        .search-wrap {
+            position: relative;
+
+            .search-input {
+                border: none;
+                border-bottom: 1px solid #599C6D;
+                width: 290px;
+                margin-bottom: 20px;
+                outline: none;
+                padding-right: 20px;
+            }
+
+            ::placeholder {
+                color: #599C6D;
+                opacity: 1;
+                /* Firefox */
+            }
+
+            :-ms-input-placeholder {
+                /* Internet Explorer 10-11 */
+                color: #599C6D;
+            }
+
+            ::-ms-input-placeholder {
+                /* Microsoft Edge */
+                color: #599C6D;
+            }
+
+            .search-icon {
+                position: absolute;
+                left: 297px;
+                color: #599C6D;
+            }
+        }
+    }
+
+   
+    .upload-button {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        .button-progress {
+            color: #FFFFFF;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -12px;
+            margin-left: -12px;
+        }
+
+        .encrypt-wraper {
+            text-align: center;
+            display: flex;
+            justify-content: flex-end;
+    
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .tamper-wraper {
+            text-align: center;
+            display: flex;
+            justify-content: flex-end;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .btn-wraper {
+            position: relative;
+        }
+
+        .MuiButton-root:hover {
+            text-decoration: none;
+            background-color: #1261A3;
+            margin-left: 10px;
+            box-shadow: 0px 1px 2px 1px #b5b5b5;
+        }
+    }
+}
+#root .makeStyles-searchContainer-16 {
+    display: none;
+}

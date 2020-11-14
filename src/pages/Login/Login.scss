@@ -1,0 +1,126 @@
+.subject-title {
+    margin-top: 15vh;
+}
+
+.description-title {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.col-left {
+    position: relative;
+    height: 100vh;
+}
+
+.form-ele-wrap {
+    position: relative;
+    width: 100%;
+    padding-bottom: 17px;
+    margin-bottom: 5px;
+
+    p {
+        position: absolute;
+        bottom: 0;
+        font-size: 13px;
+        line-height: 17px;
+    }
+}
+
+.login-inner {
+    width: 100%;
+    max-width: 330px;
+    margin: 0 auto;
+
+    .login-account-link {
+        color: #1261A3;
+        font-size: 13px;
+        margin-top: 8px;
+    }
+
+    .login-account-link:hover {
+        cursor: pointer;
+    }
+
+    .left-margin {
+        margin-left: 22px;
+    }
+
+    .input-container {
+        background-color: #eee;
+        width: 100%;
+        margin-top: 20px;
+
+        .MuiFormControl-root {
+            margin: 8px 0 0;
+            width: 100%;
+
+            label {
+                padding: 0 8px;
+                transform: translate(0, 19px) scale(1);
+
+                &.MuiInputLabel-shrink {
+                    transform: translate(0, 1.5px) scale(0.75);
+                }
+
+                &+.MuiInput-formControl:before {
+                    border-bottom: 1px solid rgba(0, 0, 0, .2);
+                }
+            }
+        }
+
+        .MuiInputBase-input {
+            padding: 0 8px 10px;
+        }
+
+        .MuiInputAdornment-positionEnd {
+            flex-flow: wrap-reverse;
+            margin-right: 8px;
+
+            button {
+                padding: 0;
+            }
+        }
+       
+    }
+
+    .logo-wrap {
+        line-height: 0;
+    }
+
+    .encrypt-wrape {
+        display: flex;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+}
+
+.input-container + p {
+    margin: 0;
+    color: red;
+}
+
+.login-form {
+    margin-top: 20px;
+}
+.login-button {
+    position: relative;
+
+    .MuiButton-root:hover {
+        text-decoration: none;
+        background-color: #58946a;
+        margin-left: 10px;
+        box-shadow: 0px 1px 2px 1px #b5b5b5;
+    }
+    .button-progress {
+        color: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -12px;
+        margin-left: -12px;
+    }
+}

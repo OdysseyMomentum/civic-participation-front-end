@@ -1,0 +1,118 @@
+import { SearchTransactionsResponse, SearchTransactionRow } from '@dfuse/client/dist/types/types/search';
+import { TransactionLifecycle } from '@dfuse/client/dist/types/types/transaction';
+
+export interface SearchTransactionsResponseExtended extends SearchTransactionsResponse {
+    transactions?: SearchTransactionRowExtended[];
+}
+
+interface SearchTransactionRowExtended extends SearchTransactionRow {
+    lifecycle: TransactionLifecycleExtended;
+}
+
+interface TransactionLifecycleExtended extends TransactionLifecycle {
+    account_authorizers?: string[]
+}
+
+type Name = string; // 13 char string [a-z][0-5]
+
+class Wait {
+    wait_sec: number;
+    weight: number
+}
+
+class Key {
+    key: string;
+    weight: number
+}
+
+class AuthorizedAccount {
+    weight: number
+    permission: {
+        actor: Name;
+        permission: Name
+    }
+}
+
+class AccountPermission {
+    parent: Name;
+    perm_name: Name;
+    required_auth: {
+        waits: Wait[],
+        keys: Key[],
+        threshold: number,
+        accounts: AuthorizedAccount[]
+    }
+}
+
+// returned by POST '/chain/get-account'
+class Account {
+    account_name: Name;
+    head_block_num: number;
+    head_block_time: string; // Date/time string in the format YYYY-MM-DDTHH:MM:SS.sss
+    last_code_update: string; // Date/time string in the format YYYY-MM-DDTHH:MM:SS.sss
+    created: string; // Date/time string in the format YYYY-MM-DDTHH:MM:SS.sss
+    refund_request: {
+        owner: Name;
+        request_time: string;
+        net_amount: string;
+        cpu_amount: string
+    }
+    ram_quota: string;
+    net_limit: {
+        max: string;
+        available: string;
+        used: string
+    }
+    cpu_limit: {
+        max: string;
+        available: string;
+        used: string
+    }
+    total_resources: {
+        owner: Name;
+        ram_bytes: string;
+        net_weight: string;
+        cpu_weight: string
+    }
+    core_liquid_balance: string;
+    self_delegated_bandwidth: {
+        from: Name;
+        to: Name;
+        net_weight: string;
+        cpu_weight: string
+    }
+    net_weight: string;
+    cpu_weight: string;
+    ram_usage: string;
+    privileged: boolean;
+    permissions: AccountPermission[];
+    voter_info: {
+        owner: Name;
+        proxy: Name;
+        producers: Name[],
+        staked: string;
+        last_vote_weight: string;
+        proxied_vote_weight: string;
+        is_proxy: number,
+        flags1: number,
+        reserved2: number,
+        reserved3: string
+    }
+}
+
+export class AccountSimple extends Account {
+    accountName: string;
+    commonName: string;
+    type: AccountTypeEnum;
+    created: Date;
+    permissions: [];
+    contractDeployed: boolean;
+    lastContractUpdate?: Date;
+}
+
+enum AccountTypeEnum { Human, Org }
+
+export const AccountType = {
+    Human: 0,
+    Org: 1
+}
